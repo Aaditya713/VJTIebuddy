@@ -22,4 +22,4 @@ Interview questions for students who are preparing for placements.
    
 It is completely responsive website, to provide smooth experience...😎  
 
-If you like my project, give it a star  😁😁😁
+If you like my project, give it a star thanks  😁😁😁
