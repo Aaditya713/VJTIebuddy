@@ -4,7 +4,7 @@ An educational website for students of VJTI 😊😊😊
 
 
 Try this out::  
-
+https://vjtiebuddy.in/
 
 Our Educational Website would provide all the education related stuffs:  
 Class Notes, Online Video Lectures and Sample Papers to ace Semester exams. Students can clear their doubts  
