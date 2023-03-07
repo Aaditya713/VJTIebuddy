@@ -1,26 +1,44 @@
 <?php
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $mail = $_POST["mail"];
-    $message = $_POST["message"];
 
-    $email_from = "vjtiebuddy.com";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Retrieve the form data
+  $name = trim($_POST["name"]);
+  $email = trim($_POST["email"]);
+  $message = trim($_POST["message"]);
 
-    $email_subject = "New contact form submission";
+  // Validate the data
+  if (empty($name) || empty($email) || empty($message)) {
+    http_response_code(400);
+    echo "Please fill in all fields.";
+    exit;
+  }
 
-    $email_body = "User First Name: $fname.\n".
-                    "User Last Name: $lname.\n".
-                        "User Email: $mail.\n".
-                            "User Message: $message.\n";
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo "Invalid email format.";
+    exit;
+  }
 
-    
-    $to = "vjtiebuddy.com";
+  // Send the email
+  $to = "vjtiebuddy@gmail.com";
+  $subject = "New message from contact form";
+  $body = "Name: $name\nEmail: $email\nMessage: $message";
+  $headers = "From: $email\n";
+  $headers .= "Reply-To: $email\n";
 
-    $headers = "From: $email_from \r\n";
+  if (mail($to, $subject, $body, $headers)) {
+    http_response_code(200);
+    echo "Thank you for your message!";
+  } else {
+    http_response_code(500);
+    echo "Oops! Something went wrong and we couldn't send your message.";
+  }
 
-    $headers = "Reply-To: $mail\r\n";
-    
-    mail($to,$email_subject,$email_body\r\n);
+} else {
+  // Not a POST request, so return a 405 error
+  http_response_code(405);
+  echo "Method not allowed.";
+  exit;
+}
 
-    header("Location: index.html");
 ?>
