@@ -672,9 +672,13 @@ form textarea {
 
 /*FEEDBACK*/
 .title2 {
-	position: relative;
+	/* position: relative;
 	margin-top: 150px;
-	margin-left: 100px;
+	margin-left: 100px; */
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .title2 span{
 	font-weight: 700;
