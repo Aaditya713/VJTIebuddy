@@ -405,8 +405,18 @@ body {
 
 .sample ul li a {
 	color: #FA4B37;
-	width: 300px;
-	font-size: 20px;
+    width: 300px;
+    font-size: 20px;
+    /* width: 100%; */
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid #FA4B37;
+    /* font-size: 15px; */
+    /* color: #272529; */
+    font-family: cursive;
+    /* text-decoration: none; */
+    background-color: black;
+    margin: 0.4rem;
 }
 
 /*Footer*/
