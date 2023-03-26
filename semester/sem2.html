@@ -10,6 +10,26 @@
 	<meta name="description" content="Get free and high-quality Sem-2 study materials for VJTI college students on VJTIeBuddy. Access lecture notes, video lectures of VJTI faculties, some textbooks, and past exam papers for all VJTI courses.">
 	<meta name="keywords" content="Applied Mathematics-2, Applied Physics-2, Applied Chemistry-2, VJTI Study Material, VJTI notes, VJTI past exam papers, VJTI textbooks, Veermata Jijabai Technological Institute,Mumbai">
 	<meta name="robots" content="index,follow">
+	<script>
+		function validateEmail() {
+			var emailInput = document.querySelector(".txtb");
+			var email = emailInput.value.trim();
+
+			if (email === "") {
+				alert("Please enter your email address.");
+				return false;
+			}
+
+			var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+			if (!email.match(pattern)) {
+				alert("Please enter a valid email address.");
+				return false;
+			}
+
+			alert("Thanks for subscribing to our newsletter!");
+			return true;
+		}
+	</script>
 	<script type="text/javascript" src="../script.js"></script>
 	<style>
 		body {
@@ -40,9 +60,9 @@
 				<li><a href="/index.html"><img src="../images/courses/d1.png" class="icon">Home</a></li>
 				<li><a href="/semester/sem1.html"><img src="../images/courses/paper.png" class="icon">Sem-1</a></li>
 			</ul>
-			<div class="search" id="search-switch">
+			<!-- <div class="search" id="search-switch">
 				<input type="text" placeholder="Search" class="srch"><button id="srchbtn"><img src="../images/icon/search.png"></button>
-			</div>
+			</div> -->
 		</div>
 	</header>
 
@@ -83,15 +103,16 @@
 			<p><img src="/images/icon/mail.png">&nbsp; vjtiebuddy@gmail.com</p><br>
 		</div>
 		
-		<div class="right-col">
+		<!-- <div class="right-col">
 			<h1 style="color: #fff">Our Newsletter</h1>
-			<div class="border"></div><br>
+			<div class="border"></div>
+			<br />
 			<p>Enter Your Email to get our News and updates.</p>
-			<form class="newsletter-form">
-				<input class="txtb" type="email" placeholder="Enter Your Email">
-				<input class="btn" type="submit" value="Submit">
+			<form class="newsletter-form" onsubmit="return validateEmail()">
+				<input class="txtb" type="email" placeholder="Enter Your Email" />
+				<input class="btn" type="submit" value="Submit" />
 			</form>
-		</div>
+		</div> -->
 
 		<!-- Social Media Sharing Buttons -->
 		<div class="share-buttons">
